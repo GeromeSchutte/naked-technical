@@ -57,6 +57,7 @@ export const createItem = /* GraphQL */ `
       premium
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -74,6 +75,7 @@ export const updateItem = /* GraphQL */ `
       premium
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -91,6 +93,88 @@ export const deleteItem = /* GraphQL */ `
       premium
       createdAt
       updatedAt
+      owner
+    }
+  }
+`;
+export const createBasket = /* GraphQL */ `
+  mutation CreateBasket(
+    $input: CreateBasketInput!
+    $condition: ModelBasketConditionInput
+  ) {
+    createBasket(input: $input, condition: $condition) {
+      id
+      basketId
+      startDate
+      items {
+        id
+        itemId
+        title
+        subtitle
+        itemType
+        premium
+        createdAt
+        updatedAt
+        owner
+      }
+      totalPremium
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const updateBasket = /* GraphQL */ `
+  mutation UpdateBasket(
+    $input: UpdateBasketInput!
+    $condition: ModelBasketConditionInput
+  ) {
+    updateBasket(input: $input, condition: $condition) {
+      id
+      basketId
+      startDate
+      items {
+        id
+        itemId
+        title
+        subtitle
+        itemType
+        premium
+        createdAt
+        updatedAt
+        owner
+      }
+      totalPremium
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const deleteBasket = /* GraphQL */ `
+  mutation DeleteBasket(
+    $input: DeleteBasketInput!
+    $condition: ModelBasketConditionInput
+  ) {
+    deleteBasket(input: $input, condition: $condition) {
+      id
+      basketId
+      startDate
+      items {
+        id
+        itemId
+        title
+        subtitle
+        itemType
+        premium
+        createdAt
+        updatedAt
+        owner
+      }
+      totalPremium
+      createdAt
+      updatedAt
+      owner
     }
   }
 `;

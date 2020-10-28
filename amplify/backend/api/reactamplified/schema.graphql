@@ -11,7 +11,7 @@ enum ItemType {
   Camera
 }
 
-type Item @model {
+type Item @model @auth(rules: [{allow: owner}]) {
   itemId: ID!
   title: String!
   subtitle: String!
@@ -19,7 +19,7 @@ type Item @model {
   premium: Float!
 }
 
-type Basket @model {
+type Basket @model @auth(rules: [{allow: owner}]) {
   basketId: ID!
   startDate: AWSDate!
   items: [Item]!

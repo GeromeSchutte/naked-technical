@@ -41,6 +41,7 @@ export const getItem = /* GraphQL */ `
       premium
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -60,6 +61,62 @@ export const listItems = /* GraphQL */ `
         premium
         createdAt
         updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+`;
+export const getBasket = /* GraphQL */ `
+  query GetBasket($id: ID!) {
+    getBasket(id: $id) {
+      id
+      basketId
+      startDate
+      items {
+        id
+        itemId
+        title
+        subtitle
+        itemType
+        premium
+        createdAt
+        updatedAt
+        owner
+      }
+      totalPremium
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const listBaskets = /* GraphQL */ `
+  query ListBaskets(
+    $filter: ModelBasketFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listBaskets(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        basketId
+        startDate
+        items {
+          id
+          itemId
+          title
+          subtitle
+          itemType
+          premium
+          createdAt
+          updatedAt
+          owner
+        }
+        totalPremium
+        createdAt
+        updatedAt
+        owner
       }
       nextToken
     }

@@ -35,8 +35,8 @@ export const onDeleteTodo = /* GraphQL */ `
   }
 `;
 export const onCreateItem = /* GraphQL */ `
-  subscription OnCreateItem {
-    onCreateItem {
+  subscription OnCreateItem($owner: String!) {
+    onCreateItem(owner: $owner) {
       id
       itemId
       title
@@ -45,12 +45,13 @@ export const onCreateItem = /* GraphQL */ `
       premium
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onUpdateItem = /* GraphQL */ `
-  subscription OnUpdateItem {
-    onUpdateItem {
+  subscription OnUpdateItem($owner: String!) {
+    onUpdateItem(owner: $owner) {
       id
       itemId
       title
@@ -59,12 +60,13 @@ export const onUpdateItem = /* GraphQL */ `
       premium
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onDeleteItem = /* GraphQL */ `
-  subscription OnDeleteItem {
-    onDeleteItem {
+  subscription OnDeleteItem($owner: String!) {
+    onDeleteItem(owner: $owner) {
       id
       itemId
       title
@@ -73,6 +75,79 @@ export const onDeleteItem = /* GraphQL */ `
       premium
       createdAt
       updatedAt
+      owner
+    }
+  }
+`;
+export const onCreateBasket = /* GraphQL */ `
+  subscription OnCreateBasket($owner: String!) {
+    onCreateBasket(owner: $owner) {
+      id
+      basketId
+      startDate
+      items {
+        id
+        itemId
+        title
+        subtitle
+        itemType
+        premium
+        createdAt
+        updatedAt
+        owner
+      }
+      totalPremium
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const onUpdateBasket = /* GraphQL */ `
+  subscription OnUpdateBasket($owner: String!) {
+    onUpdateBasket(owner: $owner) {
+      id
+      basketId
+      startDate
+      items {
+        id
+        itemId
+        title
+        subtitle
+        itemType
+        premium
+        createdAt
+        updatedAt
+        owner
+      }
+      totalPremium
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const onDeleteBasket = /* GraphQL */ `
+  subscription OnDeleteBasket($owner: String!) {
+    onDeleteBasket(owner: $owner) {
+      id
+      basketId
+      startDate
+      items {
+        id
+        itemId
+        title
+        subtitle
+        itemType
+        premium
+        createdAt
+        updatedAt
+        owner
+      }
+      totalPremium
+      createdAt
+      updatedAt
+      owner
     }
   }
 `;

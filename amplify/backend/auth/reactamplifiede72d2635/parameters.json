@@ -1,6 +1,6 @@
 {
     "identityPoolName": "reactamplifiede72d2635_identitypool_e72d2635",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "reactae72d2635",
     "userPoolName": "reactamplifiede72d2635_userpool_e72d2635",
     "autoVerifiedAttributes": [
@@ -45,8 +45,19 @@
             "Arn"
         ]
     },
-    "useDefault": "default",
-    "userPoolGroupList": [],
+    "useDefault": "manual",
+    "userPoolGroupList": [
+        "users"
+    ],
     "serviceName": "Cognito",
-    "dependsOn": []
+    "dependsOn": [],
+    "thirdPartyAuth": false,
+    "userPoolGroups": true,
+    "adminQueries": false,
+    "triggers": "{}",
+    "hostedUI": false,
+    "parentStack": {
+        "Ref": "AWS::StackId"
+    },
+    "permissions": []
 }
