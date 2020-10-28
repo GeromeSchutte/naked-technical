@@ -3,3 +3,18 @@ type Todo @model {
   name: String!
   description: String
 }
+
+enum ItemType {
+  Home
+  Car 
+  Phone
+  Camera
+}
+
+type Item @model {
+  itemId: ID!
+  title: String!
+  subtitle: String
+  itemType: ItemType!
+  premium: Float!
+}
