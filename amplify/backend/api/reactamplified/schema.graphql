@@ -14,7 +14,14 @@ enum ItemType {
 type Item @model {
   itemId: ID!
   title: String!
-  subtitle: String
+  subtitle: String!
   itemType: ItemType!
   premium: Float!
+}
+
+type Basket @model {
+  basketId: ID!
+  startDate: AWSDate!
+  items: [Item]!
+  totalPremium: Float!
 }

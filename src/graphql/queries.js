@@ -30,3 +30,38 @@ export const listTodos = /* GraphQL */ `
     }
   }
 `;
+export const getItem = /* GraphQL */ `
+  query GetItem($id: ID!) {
+    getItem(id: $id) {
+      id
+      itemId
+      title
+      subtitle
+      itemType
+      premium
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listItems = /* GraphQL */ `
+  query ListItems(
+    $filter: ModelItemFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listItems(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        itemId
+        title
+        subtitle
+        itemType
+        premium
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
