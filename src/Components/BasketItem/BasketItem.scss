@@ -1,0 +1,66 @@
+.basket-item {
+    height: 176px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 2.5px 7.5px 0 rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    .item-header {
+        display: grid;
+        place-items: flex-end;
+        padding: 15px;
+        padding-bottom: 8px;
+
+        .close {
+            font-size: 11.5px;
+            font-family: 'nakedicons';
+            color: #231f20;
+        }
+    }
+
+    .item-details {
+        color: #231f20;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 25px 25px 25px;
+
+        img {
+            height: 38px;
+            margin-bottom: 20px;
+        }
+
+        .name {
+            font-size: 21px;
+            line-height: 1.05;
+            letter-spacing: 0.42px;
+        }
+
+        .type {
+            text-transform: uppercase;
+            color: #46d281;
+            font-size: 14px;
+            line-height: 1.43;
+            font-weight: 500;
+            margin: 0;
+            letter-spacing: 0.28px;
+        }
+
+        .price {
+            display: flex;
+            align-items: flex-start;
+            font-weight: 900;
+            line-height: 1.12;
+            font-size: 21px;
+            letter-spacing: 0.42px;
+
+            span {
+                font-size: 16px;
+                text-transform: uppercase;
+                letter-spacing: 0.36px;
+            }
+        }
+    }
+}

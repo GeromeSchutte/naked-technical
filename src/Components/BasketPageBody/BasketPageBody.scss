@@ -1,0 +1,114 @@
+.basket-page-body {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    column-gap: 20px;
+    row-gap: 25px;
+    padding-bottom: 25px;
+    font-family: 'Roboto';
+
+    .icon {
+        font-family: 'nakedicons';
+        display: grid;
+        place-content: center;
+    }
+
+    & > .basket-content {
+        padding: 48px 20px 25px 20px;
+        grid-column: 1/4;
+        background-color: #46d281;
+        border-bottom-left-radius: 42px;
+        border-bottom-right-radius: 42px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+
+        & > h2 {
+            margin: 0;
+            margin-left: 25px;
+        }
+
+        & > .cover-date {
+            margin: 30px 0;
+            display: flex;
+            background-color: #1da869;
+            align-items: center;
+            padding: 9.5px;
+            border-radius: 300px;
+            cursor: pointer;
+
+            & > .calendar.icon {
+                font-size: 17px;
+                margin-left: 14px;
+                margin-right: 11px;
+            }
+
+            & > span {
+                flex-grow: 1;
+                font-size: 18px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+
+                .date {
+                    font-weight: bold;
+                }
+            }
+
+            & > .edit.icon {
+                font-size: 21px;
+                color: black;
+                min-height: 27px;
+                min-width: 27px;
+                background: white;
+                border-radius: 300px;
+            }
+        }
+
+        & > .basket-items {
+            display: grid;
+            grid-template-columns: auto;
+            row-gap: 20px;
+        }
+
+        & > button.buy {
+            background-image: linear-gradient(to right, #231f20, #393939);
+            box-shadow: 0px 7.5px 25px 0 rgba(0, 0, 0, 0.4);
+            font-size: 21px;
+            font-weight: bold;
+            margin-top: 30px;
+
+            .price {
+                color: white;
+            }
+        }
+    }
+
+    button {
+        cursor: pointer;
+        background-color: white;
+        font-family: 'Roboto';
+        font-weight: 500;
+        font-size: 18px;
+        color: #46d281;
+        padding: 10px 10px 10px 25px;
+        line-height: 23.5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 300px;
+        border: none;
+        justify-self: stretch;
+        grid-column: 2;
+        grid-row: 2;
+
+        & > .icon {
+            background-color: #46d281;
+            min-height: 40px;
+            min-width: 40px;
+            border-radius: 300px;
+            line-height: 15px;
+            color: white;
+            font-size: 15px;
+        }
+    }
+}
