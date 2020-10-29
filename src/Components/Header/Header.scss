@@ -17,6 +17,7 @@ nav.header {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        border: none;
 
         &::before, &::after {
             content: '';
@@ -47,6 +48,7 @@ nav.header {
         border-radius: 300px;
         padding: 6px 6px 6px 20px;
         cursor: pointer;
+        border: none;
 
         .icon {
             font-family: 'nakedicons';

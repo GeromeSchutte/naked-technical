@@ -5,7 +5,7 @@ import './Layout.scss';
 const Layout = (props) => {
     return <section className="layout">
         <div className="spacer"/>
-        <Header/>
+        <Header basketCount={props.basketCount}/>
         <section className="page-content">
             {props.children}
         </section>
