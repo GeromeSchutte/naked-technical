@@ -1,0 +1,22 @@
+enum ItemType {
+  Home
+  Car 
+  Phone
+  Camera
+}
+
+type Item @model @key(fields: ["itemId"]){
+  itemId: ID!
+  title: String!
+  subtitle: String!
+  itemType: ItemType!
+  premium: Float!
+  basket: Basket! @connection(name: "BasketItem")
+}
+
+type Basket @model @key(fields: ["basketId"]){
+  basketId: ID!
+  startDate: AWSDate!
+  items: [Item]! @connection(name: "BasketItem")
+  totalPremium: Float!
+}

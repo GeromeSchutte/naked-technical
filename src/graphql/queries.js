@@ -1,109 +1,71 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getTodo = /* GraphQL */ `
-  query GetTodo($id: ID!) {
-    getTodo(id: $id) {
-      id
-      name
-      description
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listTodos = /* GraphQL */ `
-  query ListTodos(
-    $filter: ModelTodoFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        name
-        description
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
 export const getItem = /* GraphQL */ `
-  query GetItem($id: ID!) {
-    getItem(id: $id) {
-      id
+  query GetItem($itemId: ID!) {
+    getItem(itemId: $itemId) {
       itemId
       title
       subtitle
       itemType
       premium
+      basket {
+        basketId
+        startDate
+        items {
+          nextToken
+        }
+        totalPremium
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const listItems = /* GraphQL */ `
   query ListItems(
+    $itemId: ID
     $filter: ModelItemFilterInput
     $limit: Int
     $nextToken: String
+    $sortDirection: ModelSortDirection
   ) {
-    listItems(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listItems(
+      itemId: $itemId
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      sortDirection: $sortDirection
+    ) {
       items {
-        id
         itemId
         title
         subtitle
         itemType
         premium
+        basket {
+          basketId
+          startDate
+          totalPremium
+          createdAt
+          updatedAt
+        }
         createdAt
         updatedAt
-        owner
       }
       nextToken
     }
   }
 `;
 export const getBasket = /* GraphQL */ `
-  query GetBasket($id: ID!) {
-    getBasket(id: $id) {
-      id
+  query GetBasket($basketId: ID!) {
+    getBasket(basketId: $basketId) {
       basketId
       startDate
       items {
-        id
-        itemId
-        title
-        subtitle
-        itemType
-        premium
-        createdAt
-        updatedAt
-        owner
-      }
-      totalPremium
-      createdAt
-      updatedAt
-      owner
-    }
-  }
-`;
-export const listBaskets = /* GraphQL */ `
-  query ListBaskets(
-    $filter: ModelBasketFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listBaskets(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        basketId
-        startDate
         items {
-          id
           itemId
           title
           subtitle
@@ -111,12 +73,39 @@ export const listBaskets = /* GraphQL */ `
           premium
           createdAt
           updatedAt
-          owner
+        }
+        nextToken
+      }
+      totalPremium
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listBaskets = /* GraphQL */ `
+  query ListBaskets(
+    $basketId: ID
+    $filter: ModelBasketFilterInput
+    $limit: Int
+    $nextToken: String
+    $sortDirection: ModelSortDirection
+  ) {
+    listBaskets(
+      basketId: $basketId
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      sortDirection: $sortDirection
+    ) {
+      items {
+        basketId
+        startDate
+        items {
+          nextToken
         }
         totalPremium
         createdAt
         updatedAt
-        owner
       }
       nextToken
     }

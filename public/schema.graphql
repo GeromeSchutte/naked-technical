@@ -1,9 +1,3 @@
-type Todo @model {
-  id: ID!
-  name: String!
-  description: String
-}
-
 enum ItemType {
   Home
   Car 
@@ -11,15 +5,16 @@ enum ItemType {
   Camera
 }
 
-type Item @model @auth(rules: [{allow: owner}]) {
+type Item @model @key(fields: ["itemId"]){
   itemId: ID!
   title: String!
   subtitle: String!
   itemType: ItemType!
   premium: Float!
+  basket: Basket! @connection(name: "BasketItem")
 }
 
-type Basket @model @auth(rules: [{allow: owner}]) {
+type Basket @model @key(fields: ["basketId"]){
   basketId: ID!
   startDate: AWSDate!
   items: [Item]!

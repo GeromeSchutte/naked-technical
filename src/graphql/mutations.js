@@ -1,63 +1,29 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createTodo = /* GraphQL */ `
-  mutation CreateTodo(
-    $input: CreateTodoInput!
-    $condition: ModelTodoConditionInput
-  ) {
-    createTodo(input: $input, condition: $condition) {
-      id
-      name
-      description
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateTodo = /* GraphQL */ `
-  mutation UpdateTodo(
-    $input: UpdateTodoInput!
-    $condition: ModelTodoConditionInput
-  ) {
-    updateTodo(input: $input, condition: $condition) {
-      id
-      name
-      description
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteTodo = /* GraphQL */ `
-  mutation DeleteTodo(
-    $input: DeleteTodoInput!
-    $condition: ModelTodoConditionInput
-  ) {
-    deleteTodo(input: $input, condition: $condition) {
-      id
-      name
-      description
-      createdAt
-      updatedAt
-    }
-  }
-`;
 export const createItem = /* GraphQL */ `
   mutation CreateItem(
     $input: CreateItemInput!
     $condition: ModelItemConditionInput
   ) {
     createItem(input: $input, condition: $condition) {
-      id
       itemId
       title
       subtitle
       itemType
       premium
+      basket {
+        basketId
+        startDate
+        items {
+          nextToken
+        }
+        totalPremium
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -67,15 +33,23 @@ export const updateItem = /* GraphQL */ `
     $condition: ModelItemConditionInput
   ) {
     updateItem(input: $input, condition: $condition) {
-      id
       itemId
       title
       subtitle
       itemType
       premium
+      basket {
+        basketId
+        startDate
+        items {
+          nextToken
+        }
+        totalPremium
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -85,15 +59,23 @@ export const deleteItem = /* GraphQL */ `
     $condition: ModelItemConditionInput
   ) {
     deleteItem(input: $input, condition: $condition) {
-      id
       itemId
       title
       subtitle
       itemType
       premium
+      basket {
+        basketId
+        startDate
+        items {
+          nextToken
+        }
+        totalPremium
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -103,24 +85,23 @@ export const createBasket = /* GraphQL */ `
     $condition: ModelBasketConditionInput
   ) {
     createBasket(input: $input, condition: $condition) {
-      id
       basketId
       startDate
       items {
-        id
-        itemId
-        title
-        subtitle
-        itemType
-        premium
-        createdAt
-        updatedAt
-        owner
+        items {
+          itemId
+          title
+          subtitle
+          itemType
+          premium
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       totalPremium
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -130,24 +111,23 @@ export const updateBasket = /* GraphQL */ `
     $condition: ModelBasketConditionInput
   ) {
     updateBasket(input: $input, condition: $condition) {
-      id
       basketId
       startDate
       items {
-        id
-        itemId
-        title
-        subtitle
-        itemType
-        premium
-        createdAt
-        updatedAt
-        owner
+        items {
+          itemId
+          title
+          subtitle
+          itemType
+          premium
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       totalPremium
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -157,24 +137,23 @@ export const deleteBasket = /* GraphQL */ `
     $condition: ModelBasketConditionInput
   ) {
     deleteBasket(input: $input, condition: $condition) {
-      id
       basketId
       startDate
       items {
-        id
-        itemId
-        title
-        subtitle
-        itemType
-        premium
-        createdAt
-        updatedAt
-        owner
+        items {
+          itemId
+          title
+          subtitle
+          itemType
+          premium
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       totalPremium
       createdAt
       updatedAt
-      owner
     }
   }
 `;
