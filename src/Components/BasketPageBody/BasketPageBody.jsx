@@ -23,6 +23,10 @@ const BasketPageBody = ({items, price, addItem, removeItem}) => {
                             removeItem={removeItem(i)}/>
                     ))
                 }
+                <button className="add-desktop" onClick={addItem}>
+                    <span>Get another price</span>
+                    <div className="icon">&#xe900;</div>
+                </button>
             </div>
             <button className="buy">
                 <span>
@@ -31,7 +35,7 @@ const BasketPageBody = ({items, price, addItem, removeItem}) => {
                 <div className="icon">&#xe901;</div>
             </button>
         </section>
-        <button onClick={addItem}>
+        <button className="add-mobile" onClick={addItem}>
             <span>Get another price</span>
             <div className="icon">&#xe900;</div>
         </button>

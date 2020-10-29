@@ -6,6 +6,10 @@
     padding-bottom: 25px;
     font-family: 'Roboto';
 
+    @media screen and (min-width: 730px) {
+        padding-bottom: 0;
+    }
+
     .icon {
         font-family: 'nakedicons';
         display: grid;
@@ -22,9 +26,23 @@
         display: flex;
         flex-direction: column;
 
+        @media screen and (min-width: 730px) {
+            border-radius: 0;
+            padding-top: 100px;
+            padding-bottom: 90px;
+        }
+
         & > h2 {
             margin: 0;
             margin-left: 25px;
+            font-weight: bold;
+            font-size: 25px;
+            
+            @media screen and (min-width: 730px) {
+                align-self: center;
+                font-size: 35px;
+                margin-left: 0;
+            }
         }
 
         & > .cover-date {
@@ -35,6 +53,13 @@
             padding: 9.5px;
             border-radius: 300px;
             cursor: pointer;
+
+            @media screen and (min-width: 730px) {
+                margin: 50px 0;
+                min-width: 360px;
+                max-width: 360px;
+                align-self: center;
+            }
 
             & > .calendar.icon {
                 font-size: 17px;
@@ -65,9 +90,20 @@
         }
 
         & > .basket-items {
-            display: grid;
+            display: inline-grid;
             grid-template-columns: auto;
             row-gap: 20px;
+
+            @media screen and (min-width: 730px) {
+                column-gap: 20px;
+                grid-template-columns: repeat(auto-fit, 335px);
+                justify-content: center;
+            }
+
+            @media screen and (min-width: 1080px) {
+                align-self: center;
+                max-width: 1100px;
+            }
         }
 
         & > button.buy {
@@ -79,6 +115,13 @@
 
             .price {
                 color: white;
+            }
+
+            @media screen and (min-width: 730px) {
+                min-width: 360px;
+                max-width: 360px;
+                align-self: center;
+                margin-top: 50px;
             }
         }
     }
@@ -101,6 +144,10 @@
         grid-column: 2;
         grid-row: 2;
 
+        @media screen and (min-width: 730px) {
+            padding: 15px 15px 15px 46px;
+        }
+
         & > .icon {
             background-color: #46d281;
             min-height: 40px;
@@ -109,6 +156,39 @@
             line-height: 15px;
             color: white;
             font-size: 15px;
+        }
+
+        &.add-desktop {
+            cursor: pointer;
+            display: none;
+            height: 176px;
+            border-radius: 15px;
+            background-color: #35c277;
+            border: 1px solid white;
+            padding: 25px;
+            color: white;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+
+            grid-row: unset;
+            grid-column: unset;
+
+            & > .icon {
+                margin-top: 10px;
+                background: white;
+                color: #231f20;
+            }
+
+            @media screen and (min-width: 730px) {
+                display: flex;
+            }
+        }
+    }
+
+    .add-mobile {
+        @media screen and (min-width: 730px) {
+            display: none;
         }
     }
 }

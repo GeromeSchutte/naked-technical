@@ -17,5 +17,9 @@
     & > .page-content {
         overflow-y: auto;
         background-color: #e8e8e8;
+
+        @media screen and (min-width: 730px) {
+            background-color: #46d281;
+        }
     }
 }
